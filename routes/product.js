@@ -5,7 +5,7 @@ let router = express.Router();
 
 
 router.get('/:id', async (req, res) => {
-  let user = await Product.findbyid(req.params.id);
+  let user = await Product.findById(req.params.id);
   res.json(user)
 
 })

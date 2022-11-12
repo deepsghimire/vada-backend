@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/user', userRoutes);
-app.use('product', productRoutes);
+app.use('/product', productRoutes);
 
 app.listen(process.env.PORT || 8000, async () => {
   console.log("Server has started");

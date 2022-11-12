@@ -3,10 +3,14 @@ const dotenv = require("dotenv/config");
 const cors = require('cors');
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/userRoutes')
+const morgan = require('morgan')
+const productRoutes = require('./routes/product')
 
 const app = express();
 
 
+
+app.use(morgan('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -16,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/user', userRoutes);
-
+app.use('product', productRoutes);
 
 app.listen(process.env.PORT || 8000, async () => {
   console.log("Server has started");

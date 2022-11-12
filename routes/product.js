@@ -3,11 +3,19 @@ const Product = require('../models/Product');
 
 let router = express.Router();
 
+
 router.get('/:id', async (req, res) => {
-  let user = Product.findById(req.params.id);
+  let user = await Product.findbyid(req.params.id);
   res.json(user)
 
 })
+
+router.get('/', async (req, res) => {
+  let users = await Product.find();
+  res.json({ users })
+})
+
+
 
 router.post('/', async (req, res) => {
   let user;

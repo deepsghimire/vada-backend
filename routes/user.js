@@ -1,15 +1,15 @@
 const express = require('express');
-
+const User = require('../models/User');
 
 let router = express.Router();
 
-router.get('/', (req, res) => {
-  let user = { name: "John" }
-  res.json({ user })
+router.get('/:id', (req, res) => {
+  let { id } = req.params;
+  let user = User.findById({ _id: id })
 })
 
 router.post('/', (req, res) => {
-  res.json(req.body)
+  let
 })
 
 

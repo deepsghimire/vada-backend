@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("backend is working 👋");
 });
 
-app.use('/user',userRoutes);
+app.use('/user', userRoutes);
 
 
 app.listen(process.env.PORT || 8000, async () => {
